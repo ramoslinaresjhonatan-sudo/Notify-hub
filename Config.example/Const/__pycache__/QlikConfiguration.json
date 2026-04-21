@@ -1,0 +1,13 @@
+{
+    "Qlik": {
+        "Host": "https://svr-qlik.avicolasofia.com/jwt/qrs",
+        "Port": 4242,
+        "UseSSL": true,
+        "AppId": "your-app-id",
+        "UserDirectory": "SVR-QLIK",
+        "UserId": "etlqs1",
+        "CertificatePath": "\\192.168.115.145\\certs\\server_key.pem",
+        "KeyPath": "certificates/server_key.pem",
+        "AudienceKey": "112joe"
+    }
+}

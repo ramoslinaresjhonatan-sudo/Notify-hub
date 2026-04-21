@@ -1,0 +1,18 @@
+[
+  {
+    "_help": "Configuración para el reporte de tiempos de ejecución desde un CSV.",
+    "ruta_archivo": "C:\\Ruta\\Al\\Archivo\\LOGS.csv",
+    "subject": "INFORME DE TIEMPOS DE EJECUCIÓN",
+    "message": "Hola,\n\nAdjunto el reporte diario de recargas.\n\nSaludos.",
+    "destinatarios": [
+      "usuario@ejemplo.com"
+    ],
+    "grafico": "C:\\Ruta\\Al\\Archivo\\LOGS.csv",
+    "nombre_chat": "Nombre del Grupo WhatsApp",
+    "w_grafico1": true,
+    "w_grafico2": false,
+    "w_grafico3": false,
+    "w_grafico4": true,
+    "w_grafico5": true
+  }
+]

@@ -1,0 +1,7 @@
+config/*
+.log/*
+!Logs/.gitkeep
+!Storage/*
+!Storage/.gitkeep
+venv/*
+__pycache__/*

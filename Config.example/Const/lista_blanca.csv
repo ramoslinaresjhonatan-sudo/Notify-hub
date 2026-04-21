@@ -1,0 +1,280 @@
+﻿tipo;nombre;stream   
+APP;QVD - Ventas Anuladas - EBS AR  (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Ventas - EBS AR  (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Transacciones N - EBS INV (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Transacciones Discreta Mov. - EBS INV (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Transacciones - EBS INV (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Trans Prod Valorada - EBS INV - EBS-S;APP QVD STAGE 1
+APP;QVD - Temperaturas Camion - API Monnet (Inc.);APP QVD STAGE 1
+APP;QVD - Solicitudes de Trabajo - EBS EAM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Scraping Precios - Paginas Web (Inc.);APP QVD STAGE 1
+APP;QVD - Salta Ventas & Comunes - EBS AR (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Rutas RN - EBS OM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Rutas - Green Mile Distribucion (Inc.);APP QVD STAGE 1
+APP;QVD - Rutas - Green Mile Comercial (Inc.);APP QVD STAGE 1
+APP;QVD - Reporte de Tareas - EBS WMS (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Reclamos CAC - Excel Comercial (No Inc.);APP QVD STAGE 1
+APP;QVD - Recibos - EBS AR (No Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Recepciones de Aves - EBS INV (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Pedidos - EBS OM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - OT Help Desk Adis - ADIS OT (No Inc.);APP QVD STAGE 1
+APP;QVD - Orden Trabajo Detalle - EBS EAM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Notas de Credito - EBS AR (No Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Movimientos Contables - EBS GL (Inc.) SECCION 6 - MODULO GL (Ajustes Autocopy) - EBS-S - PERIODOAB;APP QVD STAGE 1
+APP;QVD - Movimientos Contables - EBS GL (Inc.) SECCION 5 - MODULO INV (Inventory) - EBS-S - PERIODOAB;APP QVD STAGE 1
+APP;QVD - Movimientos Contables - EBS GL (Inc.) SECCION 4 - MODULO INV - EBS-S - PERIODOAB - ACTUAL;APP QVD STAGE 1
+APP;QVD - Movimientos Contables - EBS GL (Inc.) SECCION 3 - MODULO GL (Manual) - EBS-S - PERIODOAB;APP QVD STAGE 1
+APP;QVD - Movimientos Contables - EBS GL (Inc.) SECCION 2 - MODULO AR - EBS-S - PERIODOAB;APP QVD STAGE 1
+APP;QVD - Mortalidad & Ganancia Peso - Mtech BRIM (Inc.);APP QVD STAGE 1
+APP;QVD - Mortalidad - Mtech BRIM (Inc.);APP QVD STAGE 1
+APP;QVD - Monnet Nuevas APIs;APP QVD STAGE 1
+APP;QVD - Monnet - API Monnet (Inc.);APP QVD STAGE 1
+APP;QVD - Modelo Retornables - Oracle Custom (Inc.);APP QVD STAGE 1
+APP;QVD - Mermas de Produccion - EBS OPM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Maestro de Motivos de Cancelacion Pedido - EBS OM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Maestro de Cuentas Contables - EBS GL (No Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Maestro de Clientes Historico - EBS AR y TXT (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Maestro de Almacenes - EBS INV (No Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Liquidacion de Pollos MTECH;APP QVD STAGE 1
+APP;QVD - Liquidacion de Cerdos MTECH;APP QVD STAGE 1
+APP;QVD - Inventarios Fabrica de Alimentos - Mtech FMIN (Inc.);APP QVD STAGE 1
+APP;QVD - Informe Valuacion de Inventario XML - EBS OPM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Informe de Obras en Ejecución SIN REV - EBS FA - EBS-S;APP QVD STAGE 1
+APP;QVD - Informe de Costos Unitarios - EBS OPM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Informe Baja Activos por Tipo - EBS FA - EBS-S;APP QVD STAGE 1
+APP;QVD - Hoja Ruta - EBS EAM - EBS-S;APP QVD STAGE 1
+APP;QVD - Hoja Carga - EBS EAM - EBS-S;APP QVD STAGE 1
+APP;QVD - Historico Facturas - EBS PO (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Historia Factura - EBS-S;APP QVD STAGE 1
+APP;QVD - Ganancia Peso - Mtech BRIM (Inc.);APP QVD STAGE 1
+APP;QVD - Fecha por Lote - QVD Mtech (No Inc.);APP QVD STAGE 1
+APP;QVD - Eventos - Green Mile Distribucion (Inc.);APP QVD STAGE 1
+APP;QVD - Estado Lote - QVD Mtech (No Inc.);APP QVD STAGE 1
+APP;QVD - EERR por Empresa - EBS FSG (Inc.) - EBS-S - DIS;APP QVD STAGE 1
+APP;QVD - EERR por Empresa - EBS FSG (Inc.) - EBS-C - DIS;APP QVD STAGE 1
+APP;QVD - EERR Consolidado - EBS FSG (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Devoluciones - EBS INV (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Detalle Intercompañia - EBS AR - EBS-S;APP QVD STAGE 1
+APP;QVD - Detalle Intercompañia - EBS AP - EBS-C - CONSOLIDADO;APP QVD STAGE 1
+APP;QVD - Detalle de Batchs - EBS OPM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Despacho+Transporte - EBS OM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Despacho Alimento - Mtech FMIN (Inc.);APP QVD STAGE 1
+APP;QVD - Costos por Articulos - Excel (No Inc.);APP QVD STAGE 1
+APP;QVD - Control de Pagos Liberados - EBS AP - EBS-S;APP QVD STAGE 1
+APP;QVD - Contabilidad SLA - EBS OPM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Balance por Empresa - EBS FSG (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Balance de Comprobacion - EBS GL (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Asistencia - TR4 CC (Inc.);APP QVD STAGE 1
+APP;QVD - Aranda Intouch API (Inc);APP QVD STAGE 1
+APP;QVD - Anexo Vehiculos - EBS (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Altas Masivas - EBS-S FA (Inc.);APP QVD STAGE 1
+APP;QVD - Alimento Consumo - Mtech FMIN(Inc.);APP QVD STAGE 1
+APP;QVD - Ajustes - EBS AR (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Activos Fijos Costo Inicial Seguros - Excel Origenes (No Inc.);APP QVD STAGE 1
+APP;QVD -  Lote Tipo Documento - EBS-S(CarlosM) - INCREMENTAL;APP QVD STAGE 1
+APP;DP - Detalle Intercompañia - EBS AP;APP QVD STAGE 1
+APP;QVD - Transacciones OT - EBS EAM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Resumen de Facturacion Taller - EBS EAM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Reportes de Activos en Obras en Ejecucion - EBS FA - EBS-S;APP QVD STAGE 1
+APP;QVD - Reclamos GMC - Excel SIG (No Inc.);APP QVD STAGE 1
+APP;QVD - Recepciones Pollo Vivo FAE - Mtech BRIM (Inc.);APP QVD STAGE 1
+APP;QVD - Recepciones de Cerdos - EBS INV (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Movimientos Contables - EBS GL (Inc.) SECCION 7 - MODULO TR - EBS-S - PERIODOAB;APP QVD STAGE 1
+APP;QVD - Movimientos Contables - EBS GL (Inc.) SECCION 4 - MODULO INV - EBS-S - PERIODOAB - ANTERIOR;APP QVD STAGE 1
+APP;QVD - Movimientos Contables - EBS GL (Inc.) SECCION 4 - MODULO INV - EBS-S - PERIODOAB - ANTE-ANTERIOR;APP QVD STAGE 1
+APP;QVD - Movimientos Contables - EBS GL (Inc.) SECCION 1 - MODULO AP - EBS-S - PERIODOAB;APP QVD STAGE 1
+APP;QVD - Horas Trabajadas - EBS EAM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Estado Recibos - EBS AR (Inc.);APP QVD STAGE 1
+APP;QVD - Descuentos - EBS QP (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Costo por Articulo Discreta - EBS INV (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Consumo Produccion - EBS - EBS-S;APP QVD STAGE 1
+APP;QVD - BOL OM Detalle de Productos Pendientes por Org - EBS OM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Balance Consolidado - EBS FSG (Inc.) - EBS-S - DIS;APP QVD STAGE 1
+APP;QVD -  Lote Tipo Documento - EBS-S(CarlosM) - INCREMENTAL 2;APP QVD STAGE 1
+APP;DP - Balance Consolidado - EBS;APP QVD STAGE 1
+APP;QVD - Registro Llamadas - Avaya;APP QVD STAGE 1
+APP;QVD - Pollito BB - Mtech BRIM (Inc.);APP QVD STAGE 1
+APP;QVD - Historico Lista Precios - Excel Origenes QVDs (Inc.);APP QVD STAGE 1
+APP;QVD - Depreciaciones Mensual Activos Fijos - EBS FA - EBS-S;APP QVD STAGE 1
+APP;QVD - Balance Consolidado - EBS FSG (Inc.) - EBS-C - DIS;APP QVD STAGE 1
+APP;QVD - Ajustes Manuales - EBS AR (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Ajuste de Costo - EBS (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Inf. Detallado de Costo de Articulos - EBS OPM (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Calendario Gregoriano - Oracle Custom (No Inc.);APP QVD STAGE 1
+APP;QVD - Libro de Compras RND SFE - EBS AP - EBS-S;APP QVD STAGE 1
+APP;QVD - Detalle de la Deuda - EBS TR (Inc.) - EBS-S;APP QVD STAGE 1
+APP;DP - Ventas - EBS;APP QVD STAGE 1
+APP;QVD - Rendicion Diaria de Ventas - EBS-S;APP QVD STAGE 1
+APP;QVD - Retenciones - EBS AP (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Tesoreria TR4;APP QVD STAGE 1
+APP;QVD -  MAYOR CONTABLE - ALTAS MASIVAS;APP QVD STAGE 1
+APP;QVD - Recibos Rendicion Diaria EBS - EBS AR (No Inc.);APP QVD STAGE 1
+APP;QVD - Retenciones - EBS PO (Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Movimientos Contables - EBS GL (Inc.) SECCION 2 - MODULO AR - EBS-S - PERIODOAB ;APP QVD STAGE 1
+APP;QVD - Maestro de Clientes - EBS AR (No Inc.) - EBS-S ;APP QVD STAGE 1
+APP;QVD - Maestro de Articulos - EBS-S INV (No Inc.) - EBS-S;APP QVD STAGE 1
+APP;QVD - Maestro de Activos - EBS INV (No Inc.) - EBS-S;APP QVD STAGE 1
+APP;DWH  - Stock Discreta - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH - Activos Fijos Costo Inicial Seguros - Excel Origenes;APP QVD DATAWAREHOUSE
+APP;DWH - Asistencia Detallada - TR4 CC;APP QVD DATAWAREHOUSE
+APP;DWH - Bajas - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH - Balance por Empresa - EBS FSG;APP QVD DATAWAREHOUSE
+APP;DWH - Contratos Vigentes y No Vigentes - TR4;APP QVD DATAWAREHOUSE
+APP;DWH - Costos por Articulos - Excel;APP QVD DATAWAREHOUSE
+APP;DWH - Cupones Promocion - EBS PV;APP QVD DATAWAREHOUSE
+APP;DWH - Despacho Alimento - Mtech FMIN;APP QVD DATAWAREHOUSE
+APP;DWH - Despacho+Transporte - EBS OM;APP QVD DATAWAREHOUSE
+APP;DWH - Detalle de Batchs - EBS OPM;APP QVD DATAWAREHOUSE
+APP;DWH - Devoluciones - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH - Eventos - Green Mile Distribucion;APP QVD DATAWAREHOUSE
+APP;DWH - Gestión de Control de Servicios Back Office - Google Forms;APP QVD DATAWAREHOUSE
+APP;DWH - Historia Factura - EBS;APP QVD DATAWAREHOUSE
+APP;DWH - Historico Lista Precios - Excel Origenes QVDs;APP QVD DATAWAREHOUSE
+APP;DWH - Informe de Costos Unitarios - EBS OPM;APP QVD DATAWAREHOUSE
+APP;DWH - Maestro de Clientes Historico -  EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH - Maestro de Motivos de Cancelacion Pedido - EBS OM (Inc.);APP QVD DATAWAREHOUSE
+APP;DWH - Nacimientos PBB - Mtech HIM;APP QVD DATAWAREHOUSE
+APP;DWH - Pedidos - EBS OM;APP QVD DATAWAREHOUSE
+APP;DWH - Planilla Tributos - IDT;APP QVD DATAWAREHOUSE
+APP;DWH - Recepciones y Contabilización - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH - Registros Ordenes de Compras - EBS PO;APP QVD DATAWAREHOUSE
+APP;DWH - Resumen y Consolidado de Pagos Liberados - EBS;APP QVD DATAWAREHOUSE
+APP;DWH - Retenciones Diarias - EBS AP;APP QVD DATAWAREHOUSE
+APP;DWH - Stock Disponible - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH - Tesoreria - TR4;APP QVD DATAWAREHOUSE
+APP;DWH - Transacciones - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH - Transacciones N - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH - Ventanas de Entrega - EBS OM;APP QVD DATAWAREHOUSE
+APP;DWH - Ventas - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH - Ventas Anuladas - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Activos Fijos - Informe de Obras en Ejecución SIN REV - EBS FA;APP QVD DATAWAREHOUSE
+APP;DWH Almacenes - Balance de Comprobacion - EBS GL;APP QVD DATAWAREHOUSE
+APP;DWH Aranda Intouch - API;APP QVD DATAWAREHOUSE
+APP;DWH Auditoria - Balance de Comprobacion - EBS GL;APP QVD DATAWAREHOUSE
+APP;DWH BI Analitica - Mamaya Help - Aranda;APP QVD DATAWAREHOUSE
+APP;DWH BI Analitica - OT Help Desk Adis - ADIS OT;APP QVD DATAWAREHOUSE
+APP;DWH Cartera - Ajustes & Ajustes Manuales - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Cartera - Notas de Credito - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Cartera - Saldos Contables - EBS GL;APP QVD DATAWAREHOUSE
+APP;DWH Comercial - Deducciones - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Comercial - Descuentos - EBS QP;APP QVD DATAWAREHOUSE
+APP;DWH Comercial - Equipos Frios - EBS Custom;APP QVD DATAWAREHOUSE
+APP;DWH Comercial - Excepciones Fecha GM - Excel Distribucion;APP QVD DATAWAREHOUSE
+APP;DWH Comercial - OT Servicios Comerciales - ADIS;APP QVD DATAWAREHOUSE
+APP;DWH Comercial - Saldos Contables - EBS GL;APP QVD DATAWAREHOUSE
+APP;DWH Comercial - Scraping Precios - Paginas Web;APP QVD DATAWAREHOUSE
+APP;DWH Comunes - Maestro de Almacenes - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Comunes - Maestro de Articulos - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Comunes - Maestro de Clientes - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Comunes - Maestro de Cuentas Contables - EBS GL;APP QVD DATAWAREHOUSE
+APP;DWH Comunes - Maestro de Tipo de Cambio - EBS GL (No Inc.);APP QVD DATAWAREHOUSE
+APP;DWH Contabilidad - Detalle Intercompañia - EBS AP (Inc.);APP QVD DATAWAREHOUSE
+APP;DWH Contabilidad - EERR por Empresa - EBS FSG - EBS-S;APP QVD DATAWAREHOUSE
+APP;DWH Costos - Asientos Contables - Mtech GRAL;APP QVD DATAWAREHOUSE
+APP;DWH Costos - Contabilidad SLA - EBS OPM;APP QVD DATAWAREHOUSE
+APP;DWH Costos - Informe Pendientes de Cierre - EBS OPM;APP QVD DATAWAREHOUSE
+APP;DWH Costos - Trans Prod Valorada - EBS OPM;APP QVD DATAWAREHOUSE
+APP;DWH Costos -Liquidacion de Cerdos GIM;APP QVD DATAWAREHOUSE
+APP;DWH Costos -Liquidacion de Pollos BRIM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Canal Agrupador - Excel Comercial;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Costos SKU - Excel Comercial;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Costos SKU Supermercados - Excel Comercial;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Maestro de Subinventarios- EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Maestro de Vehiculos - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Modelo Retornables - Oracle Custom;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Monnet - API Monnet;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Orden Trabajo Detalle - EBS EAM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - OT Servicios Logisticos - ADIS;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Planilla de Transporte Interdepartamental - EBS OM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Recepciones de Aves - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Reporte de Tareas - EBS WMS;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Rutas RN - EBS OM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Saldos Contables - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Seguimiento de OT - EBS EAM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Solicitudes de Trabajo - EBS EAM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Tolvas - Monnet Nuevas APIs;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Transacciones OT - EBS EAM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Ventas Canastillos - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Experience - Canal Agrupador - Excel Comercial;APP QVD DATAWAREHOUSE
+APP;DWH Experience - Reclamos CAC - Excel Comercial;APP QVD DATAWAREHOUSE
+APP;DWH Experience - Saldos Contables - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Fabrica - Alimento Despachos - Mtech FMIM;APP QVD DATAWAREHOUSE
+APP;DWH Fabrica - Inventarios - Mtech FMIN;APP QVD DATAWAREHOUSE
+APP;DWH Fabrica - Total Feed Production - Mtech FMIN;APP QVD DATAWAREHOUSE
+APP;DWH Fabrica - Varios - Mtech FMIN;APP QVD DATAWAREHOUSE
+APP;DWH Finanzas - Control de Pagos Liberados - EBS AP;APP QVD DATAWAREHOUSE
+APP;DWH Finanzas - Detalle Articulos por Almacen - INV EBS;APP QVD DATAWAREHOUSE
+APP;DWH Frigorifico Aves -  Registro Procesamiento FAE - EBS QA;APP QVD DATAWAREHOUSE
+APP;DWH Frigorifico Aves - Recepciones de Aves - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Gestion Pagos - Historico Facturas - EBS PO;APP QVD DATAWAREHOUSE
+APP;DWH Granjas Pollo Parrillera - Estado Lote - QVD Mtech;APP QVD DATAWAREHOUSE
+APP;DWH Granjas Pollo Parrillera - Fecha por Lote - QVD Mtech;APP QVD DATAWAREHOUSE
+APP;DWH Granjas Pollo Parrillera - Ganancia Peso - Mtech BRIM;APP QVD DATAWAREHOUSE
+APP;DWH Granjas Pollo Parrillera - Mortalidad - Mtech BRIM;APP QVD DATAWAREHOUSE
+APP;DWH Granjas Pollo Reproductoras - Asientos Contables - Mtech GRAL;APP QVD DATAWAREHOUSE
+APP;DWH Manquehue Intouch - API;APP QVD DATAWAREHOUSE
+APP;DWH Planificación - Alimento Consumo - Mtech FMIN;APP QVD DATAWAREHOUSE
+APP;DWH Planificacion - Asientos Contables - Mtech GRAL;APP QVD DATAWAREHOUSE
+APP;DWH Planificacion - Pollito BB - Mtech BRIM;APP QVD DATAWAREHOUSE
+APP;DWH Planificacion - Recepciones de Aves - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Planificacion - Recepciones Pollo Vivo FAE - Mtech BRIM;APP QVD DATAWAREHOUSE
+APP;DWH Planificacion - Ventas Grupo Anglarill - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Reclamos - GMC (No Inc.);APP QVD DATAWAREHOUSE
+APP;DWH Salta - Salta Ventas & Comunes - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Ventas MAS - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH - Anexo Vehiculos - EBS;APP QVD DATAWAREHOUSE
+APP;DWH - Asistencia - TR4 CC;APP QVD DATAWAREHOUSE
+APP;DWH - Equipos de Frios - EBS Custom;APP QVD DATAWAREHOUSE
+APP;DWH - Estado de Cuenta de Proveedor - EBS;APP QVD DATAWAREHOUSE
+APP;DWH - Historial de Pagos Proveedores - EBS;APP QVD DATAWAREHOUSE
+APP;DWH - Hoja Ruta - EBS EAM;APP QVD DATAWAREHOUSE
+APP;DWH - Pagos Liberados Discoverer - EBS;APP QVD DATAWAREHOUSE
+APP;DWH - Recepcion y Liquidacion de Cerdos - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH - Rutas - Green Mile Comercial;APP QVD DATAWAREHOUSE
+APP;DWH - Rutas - Green Mile Distribucion;APP QVD DATAWAREHOUSE
+APP;DWH - Transacciones Discreta Mov. - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH - Trazabilidad de Pagos - EBS;APP QVD DATAWAREHOUSE
+APP;DWH - Tributos - Movimientos Contables - EBS GL - Precierre;APP QVD DATAWAREHOUSE
+APP;DWH Activos Fijos - Lineas Origen - EBS Custom (No Inc.);APP QVD DATAWAREHOUSE
+APP;DWH Activos Fijos - Reportes de Activos en Obras en Ejecucion - EBS FA;APP QVD DATAWAREHOUSE
+APP;DWH Almacenes - Costo por Articulo Discreta - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Comercial - BOL OM Detalle de Productos Pendientes por Org. TXT - EBS OM (Inc.);APP QVD DATAWAREHOUSE
+APP;DWH Comercial - Registro de Llamadas - Avaya;APP QVD DATAWAREHOUSE
+APP;DWH Comercial - Sap Lista de Precios;APP QVD DATAWAREHOUSE
+APP;DWH Comunes - Maestro de Proveedores - EBS PO;APP QVD DATAWAREHOUSE
+APP;DWH Contabilidad - Balance Consolidado - EBS FSG 2024;APP QVD DATAWAREHOUSE
+APP;DWH Contabilidad - Saldos Contables - EBS GL;APP QVD DATAWAREHOUSE
+APP;DWH Costos - Consumo Produccion - EBS;APP QVD DATAWAREHOUSE
+APP;DWH Costos - Inf. Detallado de Costo de Articulos - EBS OPM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Horas Trabajadas - EBS EAM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Resumen de Facturacion Taller - EBS EAM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion Roadnet;APP QVD DATAWAREHOUSE
+APP;DWH Experience - Reclamos GMC - Excel SIG;APP QVD DATAWAREHOUSE
+APP;DWH Granjas Pollo Parrillera - Mortalidad & Ganancia Peso - Mtech BRIM;APP QVD DATAWAREHOUSE
+APP;DWH Granjas Pollo Parrillera - Pesaje Publico Tolvas - Mtech BRIM;APP QVD DATAWAREHOUSE
+APP;DWH Mejora Continua - Recepciones de Aves - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Movimientos Contables - EBS GL;APP QVD DATAWAREHOUSE
+APP;DWH - Ajuste de Costo - EBS;APP QVD DATAWAREHOUSE
+APP;DWH - Recepciones y Liquidaciones de Aves - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Activos Fijos - Depreciaciones Mensual Activos Fijos - EBS FA;APP QVD DATAWAREHOUSE
+APP;DWH Cartera - Estado Documento - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Cartera - Recibos - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Comunes - Maestro de Activos - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH Contabilidad - EERR Consolidado - EBS FSG 2024;APP QVD DATAWAREHOUSE
+APP;DWH Contabilidad - EERR por Empresa - EBS FSG - EBS-C;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Hoja Carga - EBS EAM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Pesaje Publico Tolvas - Mtech BRIM;APP QVD DATAWAREHOUSE
+APP;DWH Distribucion - Reporte de Fallas - EBS EAM;APP QVD DATAWAREHOUSE
+APP;DWH Granjas Pollo Parrillera - Pollito BB - Mtech BRIM;APP QVD DATAWAREHOUSE
+APP;DWH Granjas Pollo Parrillera - Recepciones Pollo Vivo FAE - Mtech BRIM;APP QVD DATAWAREHOUSE
+APP;DWH Planificacion - Demanda Suministros - EBS INV;APP QVD DATAWAREHOUSE
+APP;DWH - Importaciones - EBS;APP QVD DATAWAREHOUSE
+APP;DWH - Movimiento Almacenes Diarios - EBS;APP QVD DATAWAREHOUSE
+APP;DWH Comunes - Calendario Contable - EBS GL;APP QVD DATAWAREHOUSE
+APP;DWH Comunes - Calendario Gregoriano - EBS Custom;APP QVD DATAWAREHOUSE
+APP;DWH Contabilidad - EERR Consolidado - EBS FSG 2025, no borrar 01-02;APP QVD DATAWAREHOUSE
+APP;DWH Finanzas - Detalle de la Deuda - EBS TR (Inc.);APP QVD DATAWAREHOUSE
+APP;DWH Activos Fijos - Informe Baja Activos por Tipo - EBS FA;APP QVD DATAWAREHOUSE
+APP;DWH Tributos - Libro de Ventas SFE Nuevo - EBS AR;APP QVD DATAWAREHOUSE
+APP;DWH Gestion Pagos - Retenciones - EBS AP;APP QVD DATAWAREHOUSE
+APP;DWH - Estado Recibos - EBS AR;APP QVD DATAWAREHOUSE

@@ -1,0 +1,8 @@
+{
+  "_help": "Configuración del servidor SMTP para el envío de correos corporativos.",
+  "server": "smtp.ejemplo.com",
+  "port": 25,
+  "email_address": "bot@ejemplo.com",
+  "display_name": "Nombre del Bot de Notificaciones",
+  "error_recipients": "admin@ejemplo.com"
+}

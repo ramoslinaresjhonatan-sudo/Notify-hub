@@ -1,0 +1,25 @@
+{
+  "_help_paths": "Rutas absolutas a los archivos de log de Qlik Sense.",
+  "AUDIT_PATH": "SVR-QLIK_AuditActivity_Repository.txt",
+  "SCHED_PATH": "SVR-QLIK_AuditActivity_Scheduler.txt",
+
+  "_help_lines": "Puneteros de lectura. El bot los actualiza automáticamente. No modificar manualmente.",
+  "LINE_AUDIT": 0,
+  "LINE_SHED": 0,
+
+  "_help_notif": "Activa/Desactiva los canales de notificación globales.",
+  "WhatsApp": true,
+  "Correo": true,
+
+  "_help_datos": "Configuración de envíos segmentados por Stream.",
+  "Datos": [
+    {
+      "nombre": "NOTIFICACION_GRUPO_1",
+      "to": [
+        "admin@ejemplo.com"
+      ],
+      "nombre_chat": "Nombre del Grupo de WhatsApp",
+      "filtro_stream": "APP QVD STAGE 1"
+    }
+  ]
+}

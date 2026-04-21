@@ -1,0 +1,268 @@
+[2026-04-20 10:15:54] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 4 tarea(s) encontradas.
+[2026-04-20 10:15:54] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas Fallidas
+[2026-04-20 10:15:57] WARNING - ReporteTiempoCarga - [Tarea 0] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_FAILED.csv
+[2026-04-20 10:15:58] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:15:58] INFO - ReporteTiempoCarga - [Tarea 1] Procesando: INFORME DEL TIEMPO DE EJECUCIÓN - Tareas Generales
+[2026-04-20 10:15:58] WARNING - ReporteTiempoCarga - [Tarea 1] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_GENERAL.csv
+[2026-04-20 10:15:58] INFO - ReporteTiempoCarga - [Tarea 1] Finalizada.
+[2026-04-20 10:15:58] INFO - ReporteTiempoCarga - [Tarea 2] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP
+[2026-04-20 10:15:58] WARNING - ReporteTiempoCarga - [Tarea 2] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH.csv
+[2026-04-20 10:15:58] WARNING - ReporteTiempoCarga - [Tarea 2] CSV de gráficos no encontrado, sin imágenes: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH.csv
+[2026-04-20 10:15:58] INFO - ReporteTiempoCarga - [Tarea 2] Finalizada.
+[2026-04-20 10:15:58] INFO - ReporteTiempoCarga - [Tarea 3] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:15:58] WARNING - ReporteTiempoCarga - [Tarea 3] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH_ORIGINAL.csv
+[2026-04-20 10:15:58] WARNING - ReporteTiempoCarga - [Tarea 3] CSV de gráficos no encontrado, sin imágenes: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH_ORIGINAL.csv
+[2026-04-20 10:15:58] INFO - ReporteTiempoCarga - [Tarea 3] Finalizada.
+[2026-04-20 10:15:58] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:16:23] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 4 tarea(s) encontradas.
+[2026-04-20 10:16:23] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas Fallidas
+[2026-04-20 10:16:23] WARNING - ReporteTiempoCarga - [Tarea 0] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_FAILED.csv
+[2026-04-20 10:16:23] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:16:23] INFO - ReporteTiempoCarga - [Tarea 1] Procesando: INFORME DEL TIEMPO DE EJECUCIÓN - Tareas Generales
+[2026-04-20 10:16:23] WARNING - ReporteTiempoCarga - [Tarea 1] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_GENERAL.csv
+[2026-04-20 10:16:23] INFO - ReporteTiempoCarga - [Tarea 1] Finalizada.
+[2026-04-20 10:16:23] INFO - ReporteTiempoCarga - [Tarea 2] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP
+[2026-04-20 10:16:23] WARNING - ReporteTiempoCarga - [Tarea 2] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH.csv
+[2026-04-20 10:16:23] WARNING - ReporteTiempoCarga - [Tarea 2] CSV de gráficos no encontrado, sin imágenes: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH.csv
+[2026-04-20 10:16:23] INFO - ReporteTiempoCarga - [Tarea 2] Finalizada.
+[2026-04-20 10:16:23] INFO - ReporteTiempoCarga - [Tarea 3] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:16:23] WARNING - ReporteTiempoCarga - [Tarea 3] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH_ORIGINAL.csv
+[2026-04-20 10:16:23] WARNING - ReporteTiempoCarga - [Tarea 3] CSV de gráficos no encontrado, sin imágenes: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH_ORIGINAL.csv
+[2026-04-20 10:16:23] INFO - ReporteTiempoCarga - [Tarea 3] Finalizada.
+[2026-04-20 10:16:23] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:16:34] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 4 tarea(s) encontradas.
+[2026-04-20 10:16:34] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas Fallidas
+[2026-04-20 10:16:37] WARNING - ReporteTiempoCarga - [Tarea 0] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_FAILED.csv
+[2026-04-20 10:16:37] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:16:37] INFO - ReporteTiempoCarga - [Tarea 1] Procesando: INFORME DEL TIEMPO DE EJECUCIÓN - Tareas Generales
+[2026-04-20 10:16:37] WARNING - ReporteTiempoCarga - [Tarea 1] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_GENERAL.csv
+[2026-04-20 10:16:37] INFO - ReporteTiempoCarga - [Tarea 1] Finalizada.
+[2026-04-20 10:16:37] INFO - ReporteTiempoCarga - [Tarea 2] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP
+[2026-04-20 10:16:37] WARNING - ReporteTiempoCarga - [Tarea 2] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH.csv
+[2026-04-20 10:16:37] WARNING - ReporteTiempoCarga - [Tarea 2] CSV de gráficos no encontrado, sin imágenes: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH.csv
+[2026-04-20 10:16:37] INFO - ReporteTiempoCarga - [Tarea 2] Finalizada.
+[2026-04-20 10:16:37] INFO - ReporteTiempoCarga - [Tarea 3] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:16:37] WARNING - ReporteTiempoCarga - [Tarea 3] CSV no encontrado, se omite adjunto: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH_ORIGINAL.csv
+[2026-04-20 10:16:37] WARNING - ReporteTiempoCarga - [Tarea 3] CSV de gráficos no encontrado, sin imágenes: //svr-qlik/Data/LOGS_TAREAS_QVD_DWH_ORIGINAL.csv
+[2026-04-20 10:16:37] INFO - ReporteTiempoCarga - [Tarea 3] Finalizada.
+[2026-04-20 10:16:37] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:17:34] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:17:34] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:17:55] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 10:17:56] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 10:17:56] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:18:01] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:23:40] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:23:40] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:23:59] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 10:23:59] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 10:24:00] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:24:00] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:24:45] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:24:45] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:25:03] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 10:25:03] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 10:25:03] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:25:04] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:33:57] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:33:57] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:34:29] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 10:34:29] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 10:34:30] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:34:33] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:42:46] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:42:46] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:43:15] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 10:43:15] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 10:43:16] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:43:18] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:43:44] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:43:44] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:44:05] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 10:44:05] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 10:44:06] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:44:08] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:46:45] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:46:45] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:46:57] ERROR - ReporteTiempoCarga - [Tarea 0] Error no controlado:
+Traceback (most recent call last):
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Scripts\ReporteDeTiempoDeCarga.py", line 74, in main
+    await procesar_tarea_carga(correo, wa, cfg, index, logs)
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\ReporteTiempoCargaProceso.py", line 140, in procesar_tarea_carga
+    rutas_premium_todas, rutas_premium_wa = _generar_graficos_procesados(grafico_path, w_flags, index, logs)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\ReporteTiempoCargaProceso.py", line 60, in _generar_graficos_procesados
+    ruta = pic.Crear_Picture(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\Picture.py", line 123, in Crear_Picture
+    self._capturar_screenshot(html_final, ruta_final)
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\Picture.py", line 24, in _capturar_screenshot
+    browser = self._get_browser()
+              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\Picture.py", line 18, in _get_browser
+    picture._p = sync_playwright().start()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\venv\Lib\site-packages\playwright\sync_api\_context_manager.py", line 84, in start
+    return self.__enter__()
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\venv\Lib\site-packages\playwright\sync_api\_context_manager.py", line 47, in __enter__
+    raise Error(
+playwright._impl._errors.Error: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+
+[2026-04-20 10:46:57] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:48:32] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:48:32] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:49:02] ERROR - ReporteTiempoCarga - [Tarea 0] Error no controlado:
+Traceback (most recent call last):
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Scripts\ReporteDeTiempoDeCarga.py", line 74, in main
+    await procesar_tarea_carga(correo, wa, cfg, index, logs)
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\ReporteTiempoCargaProceso.py", line 140, in procesar_tarea_carga
+    rutas_premium_todas, rutas_premium_wa = await _generar_graficos_procesados(grafico_path, w_flags, index, logs)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\ReporteTiempoCargaProceso.py", line 60, in _generar_graficos_procesados
+    ruta = await pic.Crear_Picture(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\Picture.py", line 124, in Crear_Picture
+    await self._capturar_screenshot(html_final, ruta_final)
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\Picture.py", line 34, in _capturar_screenshot
+    await (await page.locator("body")).screenshot(path=output_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object Locator can't be used in 'await' expression
+
+[2026-04-20 10:49:02] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:50:12] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:50:12] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:50:39] ERROR - ReporteTiempoCarga - [Tarea 0] Error no controlado:
+Traceback (most recent call last):
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Scripts\ReporteDeTiempoDeCarga.py", line 74, in main
+    await procesar_tarea_carga(correo, wa, cfg, index, logs)
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\ReporteTiempoCargaProceso.py", line 140, in procesar_tarea_carga
+    rutas_premium_todas, rutas_premium_wa = await _generar_graficos_procesados(grafico_path, w_flags, index, logs)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\ReporteTiempoCargaProceso.py", line 60, in _generar_graficos_procesados
+    ruta = await pic.Crear_Picture(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\Picture.py", line 124, in Crear_Picture
+    await self._capturar_screenshot(html_final, ruta_final)
+  File "C:\Users\JHONATAN\Desktop\archivos\Panasantia\integracion de datos\script Python\notify-hub\Src\Utilities\Picture.py", line 34, in _capturar_screenshot
+    await (await page.locator("body")).screenshot(path=output_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object Locator can't be used in 'await' expression
+
+[2026-04-20 10:50:41] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:51:11] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:51:11] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:51:33] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 10:51:34] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 10:53:15] INFO - ReporteTiempoCarga - [Tarea 0] WhatsApp enviado a 'Prueba'.
+[2026-04-20 10:53:16] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:53:17] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:55:24] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:55:24] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:55:47] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 10:55:48] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 10:56:21] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 10:56:21] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 10:56:21] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 10:59:02] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 10:59:02] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 10:59:27] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 11:00:53] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 11:01:20] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 11:01:20] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 11:01:21] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 11:32:05] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 11:32:05] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 11:32:33] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 11:32:34] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 11:32:51] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 11:32:52] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 11:32:52] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 11:33:15] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 11:33:15] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 11:33:28] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 11:33:29] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 11:33:46] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 11:33:46] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 11:33:46] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 11:34:03] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 11:34:03] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 11:34:15] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 11:34:16] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 11:34:33] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 11:34:33] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 11:34:33] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 11:38:48] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 11:38:48] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 11:39:00] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 11:39:00] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 11:39:18] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 11:39:18] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 11:39:18] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 22:23:55] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 22:23:55] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 22:24:17] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 22:24:17] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 22:24:35] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 22:24:35] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 22:24:35] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 22:24:58] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 22:24:58] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 22:25:13] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 22:25:13] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 22:25:30] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 22:25:31] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 22:25:31] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 22:29:04] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 22:29:04] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 22:29:20] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 22:29:21] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 22:29:39] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 22:29:40] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 22:29:40] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 22:30:07] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 22:30:07] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 22:30:21] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 22:30:23] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 22:30:41] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 22:30:41] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 22:30:41] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 22:31:39] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 22:31:39] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 22:31:54] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 22:31:54] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 22:32:13] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 22:32:13] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 22:32:13] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 22:32:29] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 22:32:29] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 22:32:45] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 22:32:45] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 22:33:03] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 22:33:04] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 22:33:04] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 22:33:46] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 22:33:46] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 22:34:01] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 22:34:02] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 22:34:20] ERROR - ReporteTiempoCarga - [Tarea 0] Fallo WhatsApp a 'Prueba'.
+[2026-04-20 22:34:20] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 22:34:20] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 22:36:43] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 22:36:43] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 22:36:59] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 22:36:59] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 22:37:54] INFO - ReporteTiempoCarga - [Tarea 0] WhatsApp enviado a 'Prueba'.
+[2026-04-20 22:37:55] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 22:37:55] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 22:45:37] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 22:45:37] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 22:45:39] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
+[2026-04-20 22:51:26] INFO - ReporteTiempoCarga - Iniciando ReporteDeTiempoDeCarga — 1 tarea(s) encontradas.
+[2026-04-20 22:51:26] INFO - ReporteTiempoCarga - [Tarea 0] Procesando: INFORME DE TIEMPOS DE EJECUCIÓN - Tareas QVD | DWH | DP sin filtro
+[2026-04-20 22:51:46] INFO - ReporteTiempoCarga - [Tarea 0] 5 imagen(es) premium generada(s), 3 para WhatsApp.
+[2026-04-20 22:51:46] INFO - ReporteTiempoCarga - [Tarea 0] Iniciando fase de envío por WhatsApp...
+[2026-04-20 22:52:36] INFO - ReporteTiempoCarga - [Tarea 0] WhatsApp enviado a 'Prueba'.
+[2026-04-20 22:52:37] INFO - ReporteTiempoCarga - [Tarea 0] Finalizada.
+[2026-04-20 22:52:37] INFO - ReporteTiempoCarga - ReporteDeTiempoDeCarga finalizado.
