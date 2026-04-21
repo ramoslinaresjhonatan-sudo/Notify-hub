@@ -1,6 +1,9 @@
+Config/*
 config/*
-.log/*
+Logs/*
 !Logs/.gitkeep
+Storage/*
 !Storage/.gitkeep
-venv/*
-__pycache__/*
+venv/
+__pycache__/
+*.log
