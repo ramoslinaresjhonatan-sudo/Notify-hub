@@ -1,7 +1,0 @@
-qlik-sdk==0.17.0
-requests==2.27.1
-PyJWT==2.4.0
-playwright
-matplotlib
-pandas==2.2.0
-openpyxl==3.1.2
