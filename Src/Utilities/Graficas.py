@@ -156,7 +156,7 @@ def generar_graficos(ruta_archivo) -> list[str]:
         plt.close()
         file_paths.append(path4)
     else:
-        file_paths.append(None) # Placeholder to maintain indexing if needed, or handle in script
+        file_paths.append(None)
 
     df_g5 = df[(df["Inicio de Recarga"].dt.time >= pd.to_datetime("14:00:00").time()) | 
                (df["Inicio de Recarga"].dt.time < pd.to_datetime("02:00:00").time())]

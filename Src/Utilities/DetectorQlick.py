@@ -6,12 +6,7 @@ from glob import glob
 from datetime import datetime
 
 class QlikMonitor:
-    """
-    Monitor especializado para logs de Qlik Sense (Repository y Scheduler)
-    Soporta listas blancas (CSV) y deduplicación de tareas.
-    """
 
-    # Índices estándar de las columnas en logs TSV de Qlik
     IDX = {
         "Timestamp": 2,
         "Description": 5,
@@ -28,15 +23,11 @@ class QlikMonitor:
         self.state_file = state_file
         self.whitelist_csv = whitelist_csv
         
-        # Listas blancas y mapeo de Streams
         self.app_allow = set()
         self.task_allow = set()
-        self.name_to_stream = {} # Mapeo de nombre -> stream (ej: 'App1' -> 'STAGE 1')
+        self.name_to_stream = {}
         self._load_whitelist()
 
-    # =============================
-    # CARGA DE LISTA BLANCA
-    # =============================
     def _load_whitelist(self):
         if not self.whitelist_csv or not os.path.exists(self.whitelist_csv):
             print(f"Aviso: No se encontró la lista blanca en {self.whitelist_csv}. Se procesarán TODOS.")
@@ -69,9 +60,6 @@ class QlikMonitor:
     def _get_stream(self, name):
         return self.name_to_stream.get(name.strip().casefold(), "GENERAL")
 
-    # =============================
-    # ESTADO (JSON)
-    # =============================
     def load_state(self):
         try:
             with open(self.state_file, "r", encoding="utf-8") as f:
@@ -82,14 +70,12 @@ class QlikMonitor:
 
     def save_state(self, state):
         os.makedirs(os.path.dirname(self.state_file), exist_ok=True)
-        # Cargamos el archivo actual (config) para no perder otras claves
         try:
             with open(self.state_file, "r", encoding="utf-8") as f:
                 final_data = json.load(f)
         except:
             final_data = {}
             
-        # Actualizamos solo lo que cambió
         final_data.update(state)
         
         with open(self.state_file, "w", encoding="utf-8") as f:
@@ -99,9 +85,6 @@ class QlikMonitor:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
 
-    # =============================
-    # LECTURA INCREMENTAL
-    # =============================
     def tail_file(self, path, offset):
         if not os.path.exists(path):
             return offset or 0, []
@@ -126,9 +109,6 @@ class QlikMonitor:
             return cols[idx].strip()
         return ""
 
-    # =============================
-    # FILTRADO DE EVENTOS
-    # =============================
     def scan_audit_logs(self, lines):
         events = []
         keywords = ["publish app", "replace app", "unpublish app"]
@@ -141,7 +121,6 @@ class QlikMonitor:
                 cols = ln.split("\t")
                 app_name = self._get_col(cols, "ObjectName")
                 
-                # FILTRO DE LISTA BLANCA
                 if not self._is_allowed(app_name, self.app_allow):
                     continue
 
@@ -160,10 +139,7 @@ class QlikMonitor:
         return events
 
     def scan_scheduler_logs(self, lines):
-        """
-        Escanea logs del Scheduler con deduplicación por (tarea + segundo).
-        """
-        events_dedup = {} # Usamos dict para deduplicar
+        events_dedup = {}
         
         for ln in lines:
             if not ln or ln.startswith("Sequence#"): continue
@@ -173,16 +149,13 @@ class QlikMonitor:
                 cols = ln.split("\t")
                 task_name = self._get_col(cols, "ObjectName")
                 
-                # Limpiar nombre si viene con pipe (Tarea|App)
                 if "|" in task_name:
                     task_name = task_name.split("|")[0].strip()
 
-                # FILTRO DE LISTA BLANCA
                 if not self._is_allowed(task_name, self.task_allow):
                     continue
 
                 ts = self._get_col(cols, "Timestamp")
-                # Deduplicación por (tarea, segundo)
                 ts_sec = ts.split(".")[0] if ts else ts
                 key = (task_name, ts_sec)
 
@@ -198,18 +171,13 @@ class QlikMonitor:
         
         return list(events_dedup.values())
 
-    # =============================
-    # EJECUCIÓN GENERAL
-    # =============================
     def process(self):
         state = self.load_state()
         
-        # Modo embebido: busca LINE_AUDIT / LINE_SHED en el objeto principal
         es_embebido = "LINE_AUDIT" in state or "LINE_SHED" in state
         files_state = state.get("files", {})
         all_events = []
 
-        # Audit
         for file in glob(self.audit_path):
             offset = state.get("LINE_AUDIT") if es_embebido else files_state.get(file, {}).get("off")
             new_offset, lines = self.tail_file(file, offset)
@@ -219,7 +187,6 @@ class QlikMonitor:
             
             all_events.extend(self.scan_audit_logs(lines))
 
-        # Scheduler
         for file in glob(self.sched_path):
             offset = state.get("LINE_SHED") if es_embebido else files_state.get(file, {}).get("off")
             new_offset, lines = self.tail_file(file, offset)

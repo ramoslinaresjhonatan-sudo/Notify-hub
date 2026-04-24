@@ -25,7 +25,6 @@ class WhatsApp:
             self._playwright = await async_playwright().start()
             
             try:
-                # Intentar conectar al puerto 9222 (donde debería estar Chrome abierto con debug)
                 self._browser = await self._playwright.chromium.connect_over_cdp("http://localhost:9222")
             except Exception as e:
                 print(f"Error: No se pudo conectar al puerto 9222. ¿Está el navegador abierto? {e}")
@@ -120,13 +119,11 @@ class WhatsApp:
             'div[role="textbox"][aria-label*="Busc"]'
         ]
         
-        # Primero intentar asegurar que el foco esté en el área lateral
         try:
             await page.click('#side', timeout=2000)
         except:
             pass
 
-        # Atajo de WhatsApp para buscar (coloca mágicamente el cursor en el buscador)
         try:
             await page.keyboard.press("Control+Alt+/")
             await page.wait_for_timeout(800)
@@ -320,7 +317,6 @@ class WhatsApp:
     async def cerrar_sesion(self):
         await self.cerrar()
 
-    # Alias para mantener compatibilidad si se usa como singleton
     async def close(self):
         await self.cerrar()
 

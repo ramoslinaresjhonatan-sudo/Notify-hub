@@ -30,7 +30,6 @@ class picture:
         try:
             await page.set_content(html)
             await page.wait_for_load_state("networkidle")
-            # Capturar el cuerpo para evitar espacios vacíos innecesarios
             await page.locator("body").screenshot(path=output_path)
         finally:
             await context.close()

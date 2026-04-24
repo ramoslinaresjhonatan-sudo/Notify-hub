@@ -13,21 +13,18 @@ def Logs(nombre: str, log_dir: str = ''):
 
     logger = logging.getLogger(nombre)
 
-    # Evitar añadir handlers duplicados si ya fue configurado
     if logger.handlers:
         return logger
 
     logger.setLevel(logging.DEBUG)
-    logger.propagate = False  # Evitar duplicados en el root logger
+    logger.propagate = False
 
     fecha = datetime.now().strftime('%Y-%m-%d')
     log_file = os.path.join(log_dir, f'{nombre}-{fecha}.log')
 
-    # Handler de archivo
     fh = logging.FileHandler(log_file, encoding='utf-8')
     fh.setLevel(logging.DEBUG)
 
-    # Handler de consola
     ch = logging.StreamHandler()
     ch.setLevel(logging.DEBUG)
 

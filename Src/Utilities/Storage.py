@@ -1,7 +1,6 @@
 import os
 import glob
 
-# Ruta de almacenamiento temporal para gráficos generados
 _BASE = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 DIR_STORAGE = os.path.join(_BASE, 'Storage')
 
