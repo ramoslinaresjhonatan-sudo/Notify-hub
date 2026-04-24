@@ -149,8 +149,6 @@ class WhatsApp:
             except:
                 pass
 
-        # Aunque no hayamos podido hacer "click" usando el selector de Playwright, 
-        # el cursor seguro ya está ahí gracias a Control+Alt+/, así que procedemos a limpiar y escribir.
         await page.wait_for_timeout(500)
         
         await page.keyboard.press('Control+A')
@@ -174,9 +172,22 @@ class WhatsApp:
 
     async def _esperar_chat_abierto(self, nombre):
         try:
-            await self._page.locator('#main header').wait_for(timeout=10000)
-        except:
-            print(f"Advertencia: No se detectó la apertura del chat '{nombre}' visualmente.")
+            header = self._page.locator('#main header')
+            await header.wait_for(timeout=10000)
+            
+            titulo_elemento = header.locator('span[dir="auto"]').first
+            await titulo_elemento.wait_for(state="visible", timeout=5000)
+            titulo_actual = await titulo_elemento.text_content()
+            
+            if titulo_actual and nombre.lower() in titulo_actual.lower():
+                print(f"   [✓] Confirmado: Chat '{titulo_actual}' correctamente abierto.")
+                return True
+            else:
+                print(f"   [!] ADVERTENCIA: El chat abierto es '{titulo_actual}', pero se buscaba '{nombre}'.")
+                return False
+        except Exception as e:
+            print(f"   [!] Advertencia: No se pudo confirmar visualmente el nombre del chat: {e}")
+            return False
 
     async def _input_chat(self):
         selectores = [
@@ -295,7 +306,6 @@ class WhatsApp:
             print(f"================ ERROR EN WHATSAPP ================")
             print(f"Error: {str(e)}")
             traceback.print_exc()
-            print(f"===================================================")
             return False
 
     async def mensaje(self, chat, texto):

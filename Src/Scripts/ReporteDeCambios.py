@@ -22,11 +22,9 @@ BASE_PATH = config_global.get("BASE_PATH") or ROOT_DIR
 AUDIT_PATH = config_global.get("AUDIT_PATH")
 SCHED_PATH = config_global.get("SCHED_PATH")
 
-# Rutas por defecto si no están en el JSON
 _wl_path = config_global.get("WHITELIST_PATH", "Config/Const/lista_blanca.csv")
 WHITELIST_PATH = os.path.join(BASE_PATH, _wl_path) if not os.path.isabs(_wl_path) else _wl_path
 
-# Si no se especifica un archivo de estado, usamos el propio CONFIG_FILE (modo embebido)
 STATE_FILE_REL = config_global.get("STATE_FILE_RELATIVE")
 if STATE_FILE_REL:
     STATE_FILE = os.path.join(BASE_PATH, STATE_FILE_REL)

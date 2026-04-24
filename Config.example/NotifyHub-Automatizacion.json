@@ -1,0 +1,20 @@
+{
+    "procesos": [
+        {
+            "IntervaloDeHorario": "[08:00]-[18:00]",
+            "nombre": "Nombre_Proceso_1",
+            "rutas": [
+                "C:\\Ruta\\De\\Ejemplo\\Archivo_Adjunto.txt"
+            ],
+            "resumen": "C:\\Ruta\\De\\Ejemplo\\Mensaje_Resumen.txt",
+            "envio_Whatsapp": ["Nombre_Grupo_O_Contacto"]
+        },
+        {
+            "IntervaloDeHorario": "[00:00]-[23:59]",
+            "nombre": "Nombre_Proceso_2",
+            "rutas": [],
+            "resumen": "C:\\Ruta\\De\\Ejemplo\\Log_Ejecucion.txt",
+            "envio_Whatsapp": ["Admin_Sistemas", "Grupo_De_Monitoreo"]
+        }
+    ]
+}
