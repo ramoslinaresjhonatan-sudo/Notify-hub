@@ -3,10 +3,12 @@ import sys
 import json
 import asyncio
 from datetime import datetime
-
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if ROOT_DIR not in sys.path:
     sys.path.append(ROOT_DIR)
+
+from Src.Utilities.Logger import setup_logger
+logger = setup_logger("NotifyHub", "NotifyHub.log")
 
 from Src.Integrations.WhatsApp import WhatsApp
 
@@ -27,12 +29,12 @@ def esta_en_horario(intervalo):
         else:
             return hora_actual >= hora_inicio or hora_actual <= hora_fin
     except Exception as e:
-        print(f"Error al validar horario '{intervalo}': {e}")
+        logger.error(f"Error al validar horario '{intervalo}': {e}")
         return False
 
 def obtener_procesos_activos():
     if not os.path.exists(CONFIG_PATH):
-        print(f"Error: No se encontró {CONFIG_PATH}")
+        logger.error(f"Error: No se encontró {CONFIG_PATH}")
         return []
     try:
         with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
@@ -40,20 +42,20 @@ def obtener_procesos_activos():
         procesos_activos = [p for p in data.get("procesos", []) if esta_en_horario(p.get("IntervaloDeHorario"))]
         return procesos_activos
     except Exception as e:
-        print(f"Error al leer procesos activos: {e}")
+        logger.error(f"Error al leer procesos activos: {e}")
         return []
 
 async def main():
     procesos = obtener_procesos_activos()
     
     if not procesos:
-        print("No hay procesos activos en este horario.")
+        logger.info("No hay procesos activos en este horario.")
         return
 
     wa = WhatsApp()
     
     if not await wa.conectar():
-        print("Error: No se pudo establecer conexión con WhatsApp.")
+        logger.error("Error: No se pudo establecer conexión con WhatsApp.")
         return
 
     try:
@@ -63,7 +65,7 @@ async def main():
             archivos_adjuntos = proceso.get("rutas", [])
             destinatarios = proceso.get("envio_Whatsapp", [])
 
-            print(f"\nEjecutando: {nombre_tarea}")
+            logger.info(f"Ejecutando: {nombre_tarea}")
 
             mensaje_final = f"*Notificación de Automatización: {nombre_tarea}*\n\n"
             if resumen_file and os.path.exists(resumen_file):
@@ -73,19 +75,19 @@ async def main():
                 mensaje_final += "El proceso ha finalizado correctamente."
 
             for destino in destinatarios:
-                print(f"  -> Enviando a grupo: {destino}")
+                logger.info(f"  -> Enviando a grupo: {destino}")
                 
                 await wa.mensaje(destino, mensaje_final)
                 
                 for ruta in archivos_adjuntos:
                     if os.path.exists(ruta):
-                        print(f"     + Adjuntando: {os.path.basename(ruta)}")
+                        logger.info(f"     + Adjuntando: {os.path.basename(ruta)}")
                         await wa.archivo(destino, ruta)
                     else:
-                        print(f"     ! Archivo no encontrado: {ruta}")
+                        logger.warning(f"     ! Archivo no encontrado: {ruta}")
 
     except Exception as e:
-        print(f"Ocurrió un error inesperado: {e}")
+        logger.error(f"Ocurrió un error inesperado: {e}")
     finally:
         await wa.cerrar()
 

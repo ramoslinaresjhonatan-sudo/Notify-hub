@@ -1,6 +1,10 @@
 # Notify Hub
 
 **Notify Hub** es el centro de monitoreo principal y de analítica enfocado en la infraestructura de Qlik Sense. Este componente rastrea tareas fallidas, elabora informes visuales del rendimiento de las recargas, y audita cualquier cambio realizado en los aplicativos. Todo se comunica mediante Correo Electrónico y WhatsApp.
+## ✅WhatsApp 
+
+para al terminar de enviar WhatsApp, se tiene que ejecutar "reducir_memoria_proceso" que esta en la clase WhatsApp, esto hace que el
+
 
 ## 📂 Estructura del Proyecto
 

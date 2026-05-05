@@ -4,6 +4,11 @@ import time
 import os
 import base64
 import mimetypes
+import psutil
+import ctypes
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class WhatsApp:
@@ -21,18 +26,18 @@ class WhatsApp:
         await self._limpiar_recursos()
 
         try:
-            print("Intentando conectar con el navegador (CDP: 9222)...")
+            logger.info("Intentando conectar con el navegador (CDP: 9222)...")
             self._playwright = await async_playwright().start()
             
             try:
                 self._browser = await self._playwright.chromium.connect_over_cdp("http://localhost:9222")
             except Exception as e:
-                print(f"Error: No se pudo conectar al puerto 9222. ¿Está el navegador abierto? {e}")
+                logger.error(f"Error: No se pudo conectar al puerto 9222. ¿Está el navegador abierto? {e}")
                 await self.cerrar()
                 return False
 
             if not self._browser.contexts:
-                print("Error: El navegador no tiene contextos activos.")
+                logger.error("Error: El navegador no tiene contextos activos.")
                 await self.cerrar()
                 return False
 
@@ -51,7 +56,7 @@ class WhatsApp:
             return await self._validar_whatsapp()
 
         except Exception as e:
-            print(f"Error fatal en conexión WhatsApp: {e}")
+            logger.error(f"Error fatal en conexión WhatsApp: {e}")
             await self.cerrar()
             return False
 
@@ -77,7 +82,7 @@ class WhatsApp:
             if self._playwright:
                 await self._playwright.stop()
         except Exception as e:
-            print(f"Aviso al cerrar: {e}")
+            logger.debug(f"Aviso al cerrar: {e}")
         finally:
             self._playwright = None
             self._browser = None
@@ -99,7 +104,7 @@ class WhatsApp:
             await self.page.wait_for_selector('div#side', timeout=60000)
             return True
         except:
-            print("No se pudo abrir WhatsApp")
+            logger.error("No se pudo abrir WhatsApp")
             return False
 
     async def _buscar_chat(self, nombre):
@@ -161,7 +166,7 @@ class WhatsApp:
             await contact.wait_for(state="visible", timeout=7000)
             await contact.click()
         except:
-            print(f"Aviso: No se encontró contacto visualmente con título '{nombre}', intentando Enter.")
+            logger.warning(f"Aviso: No se encontró contacto visualmente con título '{nombre}', intentando Enter.")
             await page.keyboard.press('Enter')
 
         await page.wait_for_timeout(1500)
@@ -177,13 +182,13 @@ class WhatsApp:
             titulo_actual = await titulo_elemento.text_content()
             
             if titulo_actual and nombre.lower() in titulo_actual.lower():
-                print(f"   [✓] Confirmado: Chat '{titulo_actual}' correctamente abierto.")
+                logger.info(f"   [✓] Confirmado: Chat '{titulo_actual}' correctamente abierto.")
                 return True
             else:
-                print(f"   [!] ADVERTENCIA: El chat abierto es '{titulo_actual}', pero se buscaba '{nombre}'.")
+                logger.warning(f"   [!] ADVERTENCIA: El chat abierto es '{titulo_actual}', pero se buscaba '{nombre}'.")
                 return False
         except Exception as e:
-            print(f"   [!] Advertencia: No se pudo confirmar visualmente el nombre del chat: {e}")
+            logger.warning(f"   [!] Advertencia: No se pudo confirmar visualmente el nombre del chat: {e}")
             return False
 
     async def _input_chat(self):
@@ -231,12 +236,12 @@ class WhatsApp:
         try:
             subprocess.run(cmd, creationflags=0x08000000)
         except Exception as e:
-            print(f"Error copiando al portapapeles: {e}")
+            logger.error(f"Error copiando al portapapeles: {e}")
 
     async def _enviar_archivos(self, rutas, mensaje=None):
         rutas_validas = [r for r in rutas if os.path.exists(r)]
         if not rutas_validas:
-            print("Aviso: Ninguna ruta de archivo es válida.")
+            logger.warning("Aviso: Ninguna ruta de archivo es válida.")
             return
 
         page = self._page
@@ -300,10 +305,21 @@ class WhatsApp:
 
         except Exception as e:
             import traceback
-            print(f"================ ERROR EN WHATSAPP ================")
-            print(f"Error: {str(e)}")
-            traceback.print_exc()
+            logger.error(f"================ ERROR EN WHATSAPP ================")
+            logger.error(f"Error: {str(e)}")
+            logger.error(traceback.format_exc())
             return False
+
+def reducir_memoria_proceso(nombre_proceso='msedge'):
+    for proc in psutil.process_iter(['pid', 'name']):
+        try:
+            if nombre_proceso in proc.info['name'].lower():
+                handle = ctypes.windll.kernel32.OpenProcess(0x1F0FFF, False, proc.info['pid'])
+                if handle:
+                    ctypes.windll.psapi.EmptyWorkingSet(handle)
+                    ctypes.windll.kernel32.CloseHandle(handle)
+        except:
+            pass
 
     async def mensaje(self, chat, texto):
         return await self.enviar(chat, mensaje=texto)

@@ -15,13 +15,13 @@ try:
     from Src.Integrations.WhatsApp import WhatsApp
     from Src.Integrations.Correo   import Correo
     from Src.Utilities.ReporteTiempoCargaProceso import procesar_tarea_carga
-    from Src.Utilities.log         import Logs
+    from Src.Utilities.Logger      import setup_logger
     from Src.Utilities.Picture     import picture
 except ImportError as e:
     print(f"[FATAL] Error de importación: {e}")
     sys.exit(1)
 
-logs = Logs("ReporteTiempoCarga")
+logger = setup_logger("ReporteTiempoCarga", "ReporteTiempoCarga.log")
 
 CONFIG_FILE = os.path.join(root_dir, "Config", "ReporteDeTiempoDeCarga.json")
 NUM_GRAFICOS = 5
@@ -32,26 +32,26 @@ def load_config(config_path: str) -> list:
             data = json.load(f)
         return data if isinstance(data, list) else [data]
     except FileNotFoundError:
-        logs.error(f"Archivo de configuración no encontrado: {config_path}")
+        logger.error(f"Archivo de configuración no encontrado: {config_path}")
         return []
     except json.JSONDecodeError as e:
-        logs.error(f"JSON inválido en {config_path}: {e}")
+        logger.error(f"JSON inválido en {config_path}: {e}")
         return []
     except Exception as e:
-        logs.error(f"Error inesperado cargando config: {e}\n{traceback.format_exc()}")
+        logger.error(f"Error inesperado cargando config: {e}\n{traceback.format_exc()}")
         return []
 
 async def main() -> None:
     if not os.path.exists(CONFIG_FILE):
-        logs.error(f"No se encontró el archivo de configuración: {CONFIG_FILE}")
+        logger.error(f"No se encontró el archivo de configuración: {CONFIG_FILE}")
         return
 
     tasks = load_config(CONFIG_FILE)
     if not tasks:
-        logs.error("No hay tareas que procesar. Revisa el JSON de configuración.")
+        logger.error("No hay tareas que procesar. Revisa el JSON de configuración.")
         return
 
-    logs.info(f"Iniciando ReporteDeTiempoDeCarga — {len(tasks)} tarea(s) encontradas.")
+    logger.info(f"Iniciando ReporteDeTiempoDeCarga — {len(tasks)} tarea(s) encontradas.")
 
     correo_cfg_path = os.path.join(root_dir, "Config", "Correo.json")
     correo_cfg = {}
@@ -71,15 +71,15 @@ async def main() -> None:
     try:
         for index, cfg in enumerate(tasks):
             try:
-                await procesar_tarea_carga(correo, wa, cfg, index, logs)
+                await procesar_tarea_carga(correo, wa, cfg, index, logger)
             except Exception:
-                logs.error(
+                logger.error(
                     f"[Tarea {index}] Error no controlado:\n{traceback.format_exc()}"
                 )
     finally:
         await wa.cerrar()
         await picture.close()
-        logs.info("ReporteDeTiempoDeCarga finalizado.")
+        logger.info("ReporteDeTiempoDeCarga finalizado.")
 
 
 if __name__ == "__main__":

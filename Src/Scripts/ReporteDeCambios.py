@@ -3,10 +3,12 @@ import sys
 import json
 from datetime import datetime
 import asyncio
-
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if ROOT_DIR not in sys.path:
     sys.path.append(ROOT_DIR)
+
+from Src.Utilities.Logger import setup_logger
+logger = setup_logger("ReporteDeCambios", "ReporteDeCambios.log")
 
 CONFIG_FILE = os.path.join(ROOT_DIR, "Config", "DeteccionDeModificaciones.json")
 
@@ -68,10 +70,10 @@ def generar_html_tareas(eventos):
     return html + "</tbody></table>"
 
 async def main():
-    print("--- Iniciando Monitor de Qlik ---")
+    logger.info("--- Iniciando Monitor de Qlik ---")
     
     if not all([AUDIT_PATH, SCHED_PATH, STATE_FILE]):
-        print("Error: Faltan rutas críticas en el archivo de configuración JSON.")
+        logger.error("Error: Faltan rutas críticas en el archivo de configuración JSON.")
         return
 
     monitor = QlikMonitor(AUDIT_PATH, SCHED_PATH, STATE_FILE, whitelist_csv=WHITELIST_PATH)
@@ -79,20 +81,20 @@ async def main():
     correo_enabled = config_global.get("Correo", False)
     datos_notificacion = config_global.get("Datos", [])
 
-    print(f"Escaneando logs...")
+    logger.info(f"Escaneando logs...")
     nuevos_eventos = monitor.process()
 
     if not nuevos_eventos:
-        print("No se detectaron novedades.")
+        logger.info("No se detectaron novedades.")
         return
 
-    print(f"Detectados {len(nuevos_eventos)} eventos nuevos.")
+    logger.info(f"Detectados {len(nuevos_eventos)} eventos nuevos.")
     pic = picture()
     ws = WhatsApp() if whatsapp_enabled else None
 
     if ws:
         if not await ws.conectar():
-            print("No se pudo conectar a la ventana de WhatsApp abierta. Abortando envío WhatsApp.")
+            logger.warning("No se pudo conectar a la ventana de WhatsApp abierta. Abortando envío WhatsApp.")
             ws = None
 
     try:
@@ -121,7 +123,7 @@ async def main():
                 chat_names = destino.get("nombre_chat", [])
                 if isinstance(chat_names, str): chat_names = [chat_names]
                 for chat in chat_names:
-                    print(f"Enviando a WhatsApp: {chat}")
+                    logger.info(f"Enviando a WhatsApp: {chat}")
                     for ruta, msg, _, _ in archivos_notificar:
                         await ws.archivo(chat, ruta, texto=msg)
 
@@ -132,12 +134,12 @@ async def main():
                         for _, _, html_raw, titulo in archivos_notificar:
                             cuerpo = pic._insertar_Contenido(titulo, "Reporte automático", html_raw)
                             cs._enviar(destinatario=email, asunto=f"[QLIK] {titulo}", mensaje=cuerpo, is_html=True)
-                    except Exception as e: print(f"Error Correo: {e}")
+                    except Exception as e: logger.error(f"Error Correo: {e}")
 
     finally:
         await pic.close()
 
-    print("--- Proceso Finalizado ---")
+    logger.info("--- Proceso Finalizado ---")
 
 if __name__ == "__main__":
     asyncio.run(main())
