@@ -38,9 +38,9 @@ from Src.Integrations.WhatsApp import WhatsApp
 from Src.Utilities.Picture import picture
 
 try:
-    from Src.Integrations.Correo import CorreoSender
+    from Src.Integrations.Correo import Correo
 except ImportError:
-    CorreoSender = None
+    Correo = None
 
 def formatear_fecha(ts_raw):
     if not ts_raw: return "N/A"
@@ -127,13 +127,25 @@ async def main():
                     for ruta, msg, _, _ in archivos_notificar:
                         await ws.archivo(chat, ruta, texto=msg)
 
-            if correo_enabled and CorreoSender:
+            if correo_enabled and Correo:
+                correo_cfg_path = os.path.join(ROOT_DIR, "Config", "Correo.json")
+                correo_cfg = {}
+                if os.path.exists(correo_cfg_path):
+                    with open(correo_cfg_path, "r", encoding="utf-8") as f:
+                        correo_cfg = json.load(f)
+                
+                cs = Correo(
+                    server=correo_cfg.get("server"),
+                    port=correo_cfg.get("port"),
+                    email_address=correo_cfg.get("email_address"),
+                    display_name=correo_cfg.get("display_name"),
+                    error_recipients=correo_cfg.get("error_recipients")
+                )
                 for email in destino.get("to", []):
                     try:
-                        cs = CorreoSender()
                         for _, _, html_raw, titulo in archivos_notificar:
                             cuerpo = pic._insertar_Contenido(titulo, "Reporte automático", html_raw)
-                            cs._enviar(destinatario=email, asunto=f"[QLIK] {titulo}", mensaje=cuerpo, is_html=True)
+                            cs.send_mail(to=email, subject=f"[QLIK] {titulo}", message=cuerpo, is_html=True)
                     except Exception as e: logger.error(f"Error Correo: {e}")
 
     finally:
