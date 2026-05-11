@@ -1,4 +1,3 @@
-
 import os
 import sys
 import json
@@ -22,9 +21,7 @@ except ImportError as e:
     sys.exit(1)
 
 logger = setup_logger("ReporteTiempoCarga", "ReporteTiempoCarga.log")
-
 CONFIG_FILE = os.path.join(root_dir, "Config", "ReporteDeTiempoDeCarga.json")
-NUM_GRAFICOS = 5
 
 def load_config(config_path: str) -> list:
     try:
@@ -48,7 +45,7 @@ async def main() -> None:
 
     tasks = load_config(CONFIG_FILE)
     if not tasks:
-        logger.error("No hay tareas que procesar. Revisa el JSON de configuración.")
+        logger.error("No hay tareas que procesar.")
         return
 
     logger.info(f"Iniciando ReporteDeTiempoDeCarga — {len(tasks)} tarea(s) encontradas.")
@@ -66,21 +63,18 @@ async def main() -> None:
         display_name=correo_cfg.get("display_name"),
         error_recipients=correo_cfg.get("error_recipients")
     )
-    wa     = WhatsApp()
+    wa = WhatsApp()
 
     try:
         for index, cfg in enumerate(tasks):
             try:
                 await procesar_tarea_carga(correo, wa, cfg, index, logger)
             except Exception:
-                logger.error(
-                    f"[Tarea {index}] Error no controlado:\n{traceback.format_exc()}"
-                )
+                logger.error(f"[Tarea {index}] Error no controlado:\n{traceback.format_exc()}")
     finally:
         await wa.cerrar()
         await picture.close()
         logger.info("ReporteDeTiempoDeCarga finalizado.")
-
 
 if __name__ == "__main__":
     asyncio.run(main())

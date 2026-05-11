@@ -3,6 +3,7 @@ import sys
 import json
 from datetime import datetime
 import asyncio
+
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if ROOT_DIR not in sys.path:
     sys.path.append(ROOT_DIR)
@@ -28,10 +29,7 @@ _wl_path = config_global.get("WHITELIST_PATH", "Config/Const/lista_blanca.csv")
 WHITELIST_PATH = os.path.join(BASE_PATH, _wl_path) if not os.path.isabs(_wl_path) else _wl_path
 
 STATE_FILE_REL = config_global.get("STATE_FILE_RELATIVE")
-if STATE_FILE_REL:
-    STATE_FILE = os.path.join(BASE_PATH, STATE_FILE_REL)
-else:
-    STATE_FILE = CONFIG_FILE
+STATE_FILE = os.path.join(BASE_PATH, STATE_FILE_REL) if STATE_FILE_REL else CONFIG_FILE
 
 from Src.Utilities.DetectorQlick import QlikMonitor
 from Src.Integrations.WhatsApp import WhatsApp
@@ -92,10 +90,9 @@ async def main():
     pic = picture()
     ws = WhatsApp() if whatsapp_enabled else None
 
-    if ws:
-        if not await ws.conectar():
-            logger.warning("No se pudo conectar a la ventana de WhatsApp abierta. Abortando envío WhatsApp.")
-            ws = None
+    if ws and not await ws.conectar():
+        logger.warning("No se pudo conectar a la API de WhatsApp. Abortando envío WhatsApp.")
+        ws = None
 
     try:
         for destino in datos_notificacion:
@@ -123,16 +120,13 @@ async def main():
                 chat_names = destino.get("nombre_chat", [])
                 if isinstance(chat_names, str): chat_names = [chat_names]
                 for chat in chat_names:
-                    logger.info(f"Enviando a WhatsApp: {chat}")
                     for ruta, msg, _, _ in archivos_notificar:
                         await ws.archivo(chat, ruta, texto=msg)
 
             if correo_enabled and Correo:
                 correo_cfg_path = os.path.join(ROOT_DIR, "Config", "Correo.json")
-                correo_cfg = {}
-                if os.path.exists(correo_cfg_path):
-                    with open(correo_cfg_path, "r", encoding="utf-8") as f:
-                        correo_cfg = json.load(f)
+                with open(correo_cfg_path, "r", encoding="utf-8") as f:
+                    correo_cfg = json.load(f)
                 
                 cs = Correo(
                     server=correo_cfg.get("server"),
@@ -155,5 +149,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
-

@@ -1,334 +1,125 @@
-from playwright.async_api import async_playwright
-import asyncio
-import time
+"""
+WhatsApp Integration — Cliente HTTP para la API de WhatsApp.
+"""
+
 import os
-import base64
-import mimetypes
-import psutil
-import ctypes
 import logging
+import asyncio
+import aiohttp
 
 logger = logging.getLogger(__name__)
 
-
 class WhatsApp:
 
-    def __init__(self):
-        self._playwright = None
-        self._browser = None
-        self._context = None
-        self._page = None
+    def __init__(self, base_url: str = None, api_key: str = None):
+        self._base_url = (
+            base_url
+            or os.getenv("WHATSAPP_API_URL", "http://localhost:8000")
+        ).rstrip("/")
 
-    async def conectar(self):
-        if await self._pagina_activa():
-            return True
+        self._api_key = (
+            api_key
+            or os.getenv("WHATSAPP_API_KEY", "MamayatechJRL2026")
+        )
 
-        await self._limpiar_recursos()
+        self._session: aiohttp.ClientSession | None = None
+        self._timeout = aiohttp.ClientTimeout(total=320)
 
+    async def _get_session(self) -> aiohttp.ClientSession:
+        if self._session is None or self._session.closed:
+            self._session = aiohttp.ClientSession(
+                timeout=self._timeout,
+                headers={
+                    "X-API-Key": self._api_key,
+                    "Content-Type": "application/json",
+                },
+            )
+        return self._session
+
+    async def conectar(self) -> bool:
+        """Verifica que la API esté accesible."""
         try:
-            logger.info("Intentando conectar con el navegador (CDP: 9222)...")
-            self._playwright = await async_playwright().start()
-            
-            try:
-                self._browser = await self._playwright.chromium.connect_over_cdp("http://localhost:9222")
-            except Exception as e:
-                logger.error(f"Error: No se pudo conectar al puerto 9222. ¿Está el navegador abierto? {e}")
-                await self.cerrar()
-                return False
-
-            if not self._browser.contexts:
-                logger.error("Error: El navegador no tiene contextos activos.")
-                await self.cerrar()
-                return False
-
-            self._context = self._browser.contexts[0]
-            
-            self._page = None
-            for p in self._context.pages:
-                if "whatsapp.com" in p.url:
-                    self._page = p
-                    break
-            
-            if not self._page:
-                self._page = self._context.pages[0] if self._context.pages else await self._context.new_page()
-
-            await self._page.bring_to_front()
-            return await self._validar_whatsapp()
-
+            session = await self._get_session()
+            async with session.get(
+                f"{self._base_url}/docs", timeout=aiohttp.ClientTimeout(total=10)
+            ) as resp:
+                reachable = resp.status < 500
+                if reachable:
+                    logger.info("Conexión con la API de WhatsApp verificada.")
+                else:
+                    logger.error(f"API respondió con status {resp.status}")
+                return reachable
         except Exception as e:
-            logger.error(f"Error fatal en conexión WhatsApp: {e}")
-            await self.cerrar()
+            logger.error(f"No se pudo conectar a la API de WhatsApp ({self._base_url}): {e}")
             return False
 
-    async def _pagina_activa(self):
-        try:
-            return self._page and not self._page.is_closed()
-        except:
-            return False
+    async def enviar(self, chat: str, mensaje: str = None, archivos: list = None) -> bool:
+        """Envía un mensaje de texto, archivos o ambos."""
+        archivos_abs = None
+        if archivos:
+            archivos_abs = [os.path.abspath(r) for r in archivos if os.path.exists(r)]
+            if not archivos_abs:
+                logger.warning("Ninguno de los archivos proporcionados existe.")
+                archivos_abs = None
 
-    @property
-    def page(self):
-        return self._page
+        payload = {
+            "chat": chat,
+            "message": mensaje or "",
+            "files": archivos_abs,
+        }
 
-    async def _limpiar_recursos(self):
-        self._browser = None
-        self._context = None
-        self._page = None
+        return await self._post("/send-message", payload, chat)
 
-    async def cerrar(self):
-        try:
-            if self._browser:
-                await self._browser.close()
-            if self._playwright:
-                await self._playwright.stop()
-        except Exception as e:
-            logger.debug(f"Aviso al cerrar: {e}")
-        finally:
-            self._playwright = None
-            self._browser = None
-            self._context = None
-            self._page = None
-
-    async def _validar_whatsapp(self):
-        try:
-            await self.page.wait_for_selector('div#side', timeout=5000)
-            return True
-        except:
-            return await self._abrir_whatsapp()
-
-    async def _abrir_whatsapp(self):
-        if "whatsapp.com" not in self.page.url:
-            await self.page.goto("https://web.whatsapp.com")
-
-        try:
-            await self.page.wait_for_selector('div#side', timeout=60000)
-            return True
-        except:
-            logger.error("No se pudo abrir WhatsApp")
-            return False
-
-    async def _buscar_chat(self, nombre):
-        page = self._page
-
-        try:
-            await page.wait_for_selector('#side', timeout=30000)
-            await page.wait_for_selector('div[data-testid="loading"]', state="hidden", timeout=10000)
-        except:
-            pass
-
-        search_selectors = [
-            '#side div[contenteditable="true"]',
-            'div[contenteditable="true"][data-tab="3"]',
-            'div[data-testid="chat-list-search"]',
-            'div[role="textbox"][aria-placeholder*="Busc"]',
-            'div[role="textbox"][aria-label*="Busc"]'
-        ]
-        
-        try:
-            await page.click('#side', timeout=2000)
-        except:
-            pass
-
-        try:
-            await page.keyboard.press("Control+Alt+/")
-            await page.wait_for_timeout(800)
-        except:
-            pass
-
-        search = None
-        for sel in search_selectors:
-            try:
-                el = page.locator(sel).first
-                if await el.is_visible():
-                    search = el
-                    break
-            except:
-                continue
-                
-        if search:
-            try:
-                await search.click(force=True)
-            except:
-                pass
-
-        await page.wait_for_timeout(500)
-        
-        await page.keyboard.press('Control+A')
-        await page.keyboard.press('Backspace')
-        await page.wait_for_timeout(300)
-
-        await page.keyboard.type(nombre, delay=60)
-        await page.wait_for_timeout(2000)
-
-        chat_selector = f'span[title="{nombre}"]'
-        try:
-            contact = page.locator(chat_selector).first
-            await contact.wait_for(state="visible", timeout=7000)
-            await contact.click()
-        except:
-            logger.warning(f"Aviso: No se encontró contacto visualmente con título '{nombre}', intentando Enter.")
-            await page.keyboard.press('Enter')
-
-        await page.wait_for_timeout(1500)
-        await self._esperar_chat_abierto(nombre)
-
-    async def _esperar_chat_abierto(self, nombre):
-        try:
-            header = self._page.locator('#main header')
-            await header.wait_for(timeout=10000)
-            
-            titulo_elemento = header.locator('span[dir="auto"]').first
-            await titulo_elemento.wait_for(state="visible", timeout=5000)
-            titulo_actual = await titulo_elemento.text_content()
-            
-            if titulo_actual and nombre.lower() in titulo_actual.lower():
-                logger.info(f"   [✓] Confirmado: Chat '{titulo_actual}' correctamente abierto.")
-                return True
-            else:
-                logger.warning(f"   [!] ADVERTENCIA: El chat abierto es '{titulo_actual}', pero se buscaba '{nombre}'.")
-                return False
-        except Exception as e:
-            logger.warning(f"   [!] Advertencia: No se pudo confirmar visualmente el nombre del chat: {e}")
-            return False
-
-    async def _input_chat(self):
-        selectores = [
-            'div.lexical-rich-text-input div[contenteditable="true"]',
-            'div[data-testid="conversation-compose-box-input"]',
-            'div[contenteditable="true"][data-tab="10"]',
-            '#main footer div[contenteditable="true"]',
-            'div[title="Escribe un mensaje"]',
-            'footer div[role="textbox"]'
-        ]
-        
-        for sel in selectores:
-            try:
-                el = self._page.locator(sel).first
-                await el.wait_for(state="visible", timeout=3000)
-                return el
-            except:
-                continue
-        
-        return self._page.locator('div[contenteditable="true"]').last
-
-    async def _enviar_texto(self, texto):
-        box = await self._input_chat()
-        await box.click()
-        await box.fill("")
-        await self._page.keyboard.insert_text(texto)
-        await self._page.keyboard.press("Enter")
-
-    async def _copiar_archivos_al_portapapeles(self, rutas):
-        import subprocess
-        script_lines = [
-            "Add-Type -AssemblyName System.Windows.Forms",
-            "[System.Windows.Forms.Clipboard]::Clear()",
-            "$files = New-Object System.Collections.Specialized.StringCollection"
-        ]
-        for r in rutas:
-            abs_path = os.path.abspath(r).replace("'", "''")
-            script_lines.append(f"$files.Add('{abs_path}')")
-        
-        script_lines.append("[System.Windows.Forms.Clipboard]::SetFileDropList($files)")
-        ps_code = "; ".join(script_lines)
-        
-        cmd = ["powershell", "-NoProfile", "-Command", ps_code]
-        try:
-            subprocess.run(cmd, creationflags=0x08000000)
-        except Exception as e:
-            logger.error(f"Error copiando al portapapeles: {e}")
-
-    async def _enviar_archivos(self, rutas, mensaje=None):
-        rutas_validas = [r for r in rutas if os.path.exists(r)]
-        if not rutas_validas:
-            logger.warning("Aviso: Ninguna ruta de archivo es válida.")
-            return
-
-        page = self._page
-        input_box = await self._input_chat()
-        await input_box.click()
-        await page.wait_for_timeout(500)
-
-        await self._copiar_archivos_al_portapapeles(rutas_validas)
-        await page.wait_for_timeout(800)
-
-        await page.keyboard.press("Control+V")
-        await page.wait_for_timeout(3500)
-
-        if mensaje:
-            caption_selectors = [
-                'div[data-tab="10"]',
-                'div[data-tab="6"]',
-                'div[contenteditable="true"][role="textbox"]',
-            ]
-            for sel in caption_selectors:
-                try:
-                    cap = page.locator(sel).last
-                    if await cap.is_visible():
-                        await cap.click()
-                        await page.keyboard.insert_text(mensaje)
-                        await page.wait_for_timeout(500)
-                        break
-                except:
-                    continue
-
-        await self._click_enviar()
-        await page.wait_for_timeout(2000)
-
-    async def _click_enviar(self):
-        try:
-            btn = self._page.locator('span[data-icon="send"]').last
-            await btn.click()
-        except:
-            await self._page.keyboard.press("Enter")
-
-    async def _esperar_envio(self):
-        await asyncio.sleep(2)
-        try:
-            await self._page.locator('span[data-icon="msg-time"]').wait_for(state="hidden", timeout=10000)
-        except:
-            pass
-
-    async def enviar(self, chat, mensaje=None, archivos=None):
-        if not await self.conectar():
-            return False
-        try:
-            await self._buscar_chat(chat)
-
-            if archivos:
-                await self._enviar_archivos(archivos, mensaje)
-            elif mensaje:
-                await self._enviar_texto(mensaje)
-
-            await self._esperar_envio()
-            return True
-
-        except Exception as e:
-            import traceback
-            logger.error(f"================ ERROR EN WHATSAPP ================")
-            logger.error(f"Error: {str(e)}")
-            logger.error(traceback.format_exc())
-            return False
-
-def reducir_memoria_proceso(nombre_proceso='msedge'):
-    for proc in psutil.process_iter(['pid', 'name']):
-        try:
-            if nombre_proceso in proc.info['name'].lower():
-                handle = ctypes.windll.kernel32.OpenProcess(0x1F0FFF, False, proc.info['pid'])
-                if handle:
-                    ctypes.windll.psapi.EmptyWorkingSet(handle)
-                    ctypes.windll.kernel32.CloseHandle(handle)
-        except:
-            pass
-
-    async def mensaje(self, chat, texto):
+    async def mensaje(self, chat: str, texto: str) -> bool:
         return await self.enviar(chat, mensaje=texto)
 
-    async def archivo(self, chat, ruta, texto=""):
-        return await self.enviar(chat, mensaje=texto, archivos=[ruta])
+    async def archivo(self, chat: str, ruta: str, texto: str = "") -> bool:
+        return await self.enviar(chat, mensaje=texto or None, archivos=[ruta])
 
-    async def varios(self, chat, rutas, texto=""):
-        return await self.enviar(chat, mensaje=texto, archivos=rutas)
+    async def varios(self, chat: str, rutas: list, texto: str = "") -> bool:
+        return await self.enviar(chat, mensaje=texto or None, archivos=rutas)
+
+    async def enviar_captura(self, chat: str, html: str, caption: str = None) -> bool:
+        """Envía contenido HTML como imagen capturada."""
+        payload = {
+            "chat": chat,
+            "message": html,
+        }
+        return await self._post("/send-message", payload, chat)
+
+    async def _post(self, endpoint: str, payload: dict, chat: str) -> bool:
+        url = f"{self._base_url}{endpoint}"
+        try:
+            session = await self._get_session()
+            logger.info(f"Enviando petición a {endpoint} para chat '{chat}'...")
+
+            async with session.post(url, json=payload) as resp:
+                body = await resp.json()
+                if resp.status == 200 and body.get("status") == "success":
+                    logger.info(
+                        f"   [✓] Mensaje enviado a '{chat}'. "
+                        f"Cola restante: {body.get('cola_restante', '?')}"
+                    )
+                    return True
+
+                logger.error(f"   [✗] Error API ({resp.status}): {body.get('detail', body)}")
+                return False
+
+        except asyncio.TimeoutError:
+            logger.error(f"   [✗] Timeout al enviar a '{chat}' vía {endpoint}.")
+            return False
+        except aiohttp.ClientError as e:
+            logger.error(f"   [✗] Error de conexión con la API: {e}")
+            return False
+        except Exception as e:
+            logger.error(f"   [✗] Error inesperado enviando a '{chat}': {e}")
+            return False
+
+    async def cerrar(self):
+        if self._session and not self._session.closed:
+            await self._session.close()
+            logger.info("Sesión HTTP con la API de WhatsApp cerrada.")
+        self._session = None
 
     async def cerrar_sesion(self):
         await self.cerrar()
